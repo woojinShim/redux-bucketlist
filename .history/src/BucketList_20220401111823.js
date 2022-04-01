@@ -42,7 +42,7 @@ const ListStyle = styled.div`
 const ItemStyle = styled.div`
   padding: 16px;
   margin: 8px;
-  background-color: ${(props) => (props.completed ? "orange" : "aliceblue")};
+  background-color: aliceblue;
 `;
 
 export default BucketList;

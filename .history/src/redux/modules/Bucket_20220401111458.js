@@ -45,7 +45,6 @@ export default function reducer(state = initialState, action = {}) {
           return l;
         }
       });
-      console.log({ list: new_bucket_list });
       return { list: new_bucket_list };
     }
 

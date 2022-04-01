@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 import { createBucket } from "./redux/modules/bucket"; // 액션 생성 함수
 import BucketList from "./BucketList";
 import Detail from "./Detail";
-import Progress from "./Progress";
 
 function App() {
   const text = React.useRef(null);
@@ -19,7 +18,6 @@ function App() {
     <div className="App">
       <Container>
         <Title>내 버킷리스트</Title>
-        <Progress />
         <Line />
         <Switch>
           <Route exact path="/" component={BucketList} />

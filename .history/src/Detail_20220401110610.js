@@ -20,7 +20,7 @@ const Detail = (props) => {
       <h1>{bucket_list[bucket_index].text}</h1>
       <button
         onClick={() => {
-          dispatch(updateBucket(bucket_index));
+          dispatech(updateBucket(bucket_index));
         }}
       >
         완료하기

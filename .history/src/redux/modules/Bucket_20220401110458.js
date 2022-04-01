@@ -9,7 +9,6 @@ const initialState = {
     { text: "친구랑 쇼핑하기", completed: false },
     { text: "여자친구랑 여행가기", completed: false },
     { text: "테니스 치기", completed: false },
-    { text: "새 집으로 이사가기", completed: false },
   ],
 };
 
@@ -38,15 +37,8 @@ export default function reducer(state = initialState, action = {}) {
     }
 
     case "bucket/UPDATE": {
-      const new_bucket_list = state.list.map((l, idx) => {
-        if (parseInt(action.bucket_index) === idx) {
-          return { ...l, completed: true };
-        } else {
-          return l;
-        }
-      });
-      console.log({ list: new_bucket_list });
-      return { list: new_bucket_list };
+      console.log("이제 완료할꺼야!");
+      return state;
     }
 
     case "bucket/DELETE": {

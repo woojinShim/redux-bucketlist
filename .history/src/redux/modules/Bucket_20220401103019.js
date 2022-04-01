@@ -1,6 +1,5 @@
 // Actions
 const CREATE = "bucket/CREATE";
-const UPDATE = "bucket/UPDATE";
 const DELETE = "bucket/DELETE";
 
 // 초기값
@@ -9,7 +8,6 @@ const initialState = {
     { text: "친구랑 쇼핑하기", completed: false },
     { text: "여자친구랑 여행가기", completed: false },
     { text: "테니스 치기", completed: false },
-    { text: "새 집으로 이사가기", completed: false },
   ],
 };
 
@@ -18,11 +16,6 @@ export function createBucket(bucket) {
   console.log("액션을 생성했음");
   return { type: CREATE, bucket: bucket }; // 액션 객체 리턴, bucket - 추가할 값
 }
-
-export function updateBucket(bucket_index) {
-  return { type: UPDATE, bucket_index };
-}
-
 export function deleteBucket(bucket_index) {
   return { type: DELETE, bucket_index };
 }
@@ -36,19 +29,6 @@ export default function reducer(state = initialState, action = {}) {
       const new_bucket_list = [...state.list, action.bucket];
       return { list: new_bucket_list };
     }
-
-    case "bucket/UPDATE": {
-      const new_bucket_list = state.list.map((l, idx) => {
-        if (parseInt(action.bucket_index) === idx) {
-          return { ...l, completed: true };
-        } else {
-          return l;
-        }
-      });
-      console.log({ list: new_bucket_list });
-      return { list: new_bucket_list };
-    }
-
     case "bucket/DELETE": {
       console.log(state, action);
       const new_bucket_list = state.list.filter((l, idx) => {

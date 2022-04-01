@@ -38,6 +38,9 @@ export default function reducer(state = initialState, action = {}) {
     }
 
     case "bucket/UPDATE": {
+      console.log("이제 완료할꺼야!");
+      console.log(state, action);
+
       const new_bucket_list = state.list.map((l, idx) => {
         if (parseInt(action.bucket_index) === idx) {
           return { ...l, completed: true };
@@ -45,7 +48,6 @@ export default function reducer(state = initialState, action = {}) {
           return l;
         }
       });
-      console.log({ list: new_bucket_list });
       return { list: new_bucket_list };
     }
 
